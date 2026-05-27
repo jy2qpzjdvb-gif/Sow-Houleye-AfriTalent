@@ -1,0 +1,189 @@
+/* importation de google font (2 polices poppins et nunito) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap');
+
+/* variables css */
+:root{
+    /* variablespour la palette de couleurs (6 couleurs) */
+    --couleur-primaire: #F97316;
+    --couleur-secondaire: #1E293B;
+    --couleur-accent: #10b981;
+    --couleur-fond: #f4f8f9;
+    --couleur-texte: #1e293b;
+    --couleur-texte-clair: #64748b;
+    /* variablespour les tailles de police (2 tailles) */
+    --police-titre:poppins, sans-serif;
+    --police-texte:nunito, sans-serif;
+    /* variablespour les espacements ( tailles) */
+    --espace-xs: 4px;
+    --espace-sm: 8px;
+    --espace-md: 16px;
+    --espace-lg: 32px;
+    --espace-xl: 64px;
+    /* variables pour les bordures */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 24px;
+    /* variables pour les ombres */
+    --ombre-legere: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --ombre-moyenne: 0 4px 20px rgba(0, 0, 0, 0.12);
+    --ombre-forte: 0 8px 32px rgba(0, 0, 0, 0.18);
+    /* variables pour les transitions (pour les animations hover) */
+    --transition: all 0.3s ease;
+}
+/* reset css  pour enlever les marges et les paddings par défaut des éléments HTML et pour utiliser le box-sizing border-box pour une meilleure gestion des dimensions des éléments */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* body styles */
+body{
+    font-family: var(--police-texte);
+    background-color: var(--couleur-fond);
+    color: var(--couleur-texte);
+    /* pour les interlignes du texte */
+    line-height: 1.6;
+}
+/* styles pour les titres (h1 à h6) */
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--police-titre);
+    color: var(--couleur-texte);
+    line-height: 1.2;
+    margin-bottom: var(--espace-sm);
+}
+h1{
+    font-size:clamp(2rem, 5vw, 3.5rem) 
+}
+h2{
+    font-size: clamp(1rem, 3vw, 2rem);  
+}
+h3{
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+h4{
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+h5{
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+}
+h6{
+    font-size: clamp(1rem, 2vw, 1.25rem);
+}
+/* style pour les paragraphes */
+p{
+    font-family: var(--police-texte);
+    color: var(--couleur-texte-clair);
+    margin-bottom: var(--espace-sm);
+    font-size: 1rem;
+}
+/* style pour les liens */
+a{
+    color: var(--couleur-primaire);
+    text-decoration: none;
+    transition: var(--transition);
+}
+a:hover{
+    color: var(--couleur-accent);
+}
+/* liste sans style par defaut */
+ul, ol{
+    list-style: none;
+}
+/* image responsives par défaut */
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+/* style pour les boutons */
+.btn-primary{
+    background-color: var(--couleur-primaire);
+    color: white;
+    padding: var(--espace-sm) var(--espace-md);
+    border: none;
+    border-radius: var(--radius-sm);
+    font-family: var(--police-texte);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-block;
+}
+.btn-primary:hover{
+    background-color: #ea6c0a;
+    color: white;
+    box-shadow: var(--ombre-moyenne);
+    transform: translateY(-2px);/* legere elevation du bouton au hover */
+}
+.btn-secondary{
+    background-color: transparent;
+    color: var(--couleur-primaire);
+    padding: var(--espace-xs) var(--espace-md);
+    border: 2px solid var(--couleur-primaire);
+    border-radius: var(--radius-sm);
+    font-family: var(--police-texte);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-block;
+}
+.btn-secondary:hover{
+    background-color: var(--couleur-primaire);
+    color: white;
+    transform: translateY(-2px);
+}
+/* style du header */
+header{
+    position: sticky;
+    top: 0;
+    background-color: var(--primary);
+}
+/* style pour la navigation */
+.navbar{
+    background-color: var(--couleur-secondaire) !important/* pour forcer la couleur de fond du navbar de bootstrap */;
+    padding: var(--espace-xs) var(--espace-sm);
+    box-shadow: var(--ombre-moyenne);
+}
+/*logo AfriTalent dans le navbar */
+.navbar-brand{
+    font-family: var(--police-titre);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--couleur-primaire) !important;
+    letter-spacing: -0.05px;
+}
+/* style pour les liens de navigation */
+.nav-link{
+    font-family: var(--police-texte);
+    color: #cbd5e1 !important;
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 0.4rem var(--espace-xs) ;
+    border-radius: var(--radius-sm);
+}
+.nav-link:hover,
+.nav-link.active{
+    color: var(--couleur-primaire) !important;
+    background-color: rgba(249, 115, 22, 0.1);/* orange transparent */
+    box-shadow: var(--ombre-legere);
+}
+/* bouton cta dans la navbar */
+nav .btn-primary{
+    background-color: var(--couleur-primaire);
+    color: white !important;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    padding: 0.4rem var(--espace-xs) !important;
+    transition: var(--transition);
+}   
+nav .btn-primary:hover{
+    background-color: #ea6c0a;
+    color: white !important;
+    box-shadow: var(--ombre-moyenne);
+    transform: translateY(-1px);
+}
+
+/* section hero */
+
+
