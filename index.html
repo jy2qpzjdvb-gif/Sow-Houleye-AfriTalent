@@ -68,22 +68,22 @@
     <!--   section hero   -->
 
         <main>
-            <section>
+            <section class="hero">
                 <div class="text-center">
                     <h1>Trouvez les meilleurs talents tech en Afrique</h1>
-                   <!-- <h2>Une plateforme simple et fiable pour connecter freelances et entreprises à travers toute l'Afrique.</h2> -->
+                    <h2>Une plateforme simple et fiable pour connecter freelances et entreprises à travers toute l'Afrique.</h2> 
                 </div>
 
                 <div class="text-center">
-                    <button><a class="" href="">je suis Freelance</a></button>
-                    <button><a class="" href="">je cherche un Freelance</a>
+                    <a class="btn btn-secondary" href="contact.html">je suis Freelance</a>
+                    <a class="btn btn-secondary" href="contact.html">je cherche un Freelance</a>
                 </div>
             </section>
         </main>
 
     <!--      Comment ça marche  --> 
 
-          <section>
+          <section class="section-comment-marche">
             <div class="text-center">
                  <h2>Comment ça marche</h2>
             </div>
@@ -137,7 +137,7 @@
             <div class="text-center">
                 <h2>Nos services</h2>
             </div>
-                <div class="row"> >
+                <div class="row"> 
                     <div class="col-md-4 text-center" >
                         <i class="bi bi-code-slash fs-1"></i>
                         <h4>Dèveloppement Web</h4>
@@ -205,15 +205,15 @@
 
     <!---     temoignages   -->
 
-      <section>
+      <section id="temoignages">
         <div class="text-center">
              <h2>Témoignages</h2>
         </div>
-        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="hover">
              <div class="carousel-inner">
                  <div class="carousel-item active">
-                     <div class="row">
-                         <div class="col-md-4 text-center">
+                     
+                         <div class="text-center">
                              <img src="images/temoin1.jpg" alt="photo de Oumar lam" width="100px" height="100px">
                              <h4>Oumar lam </h4>
                                 <p><em>Entrepreneur</em></p>
@@ -227,8 +227,10 @@
                                 <i class="bi bi-star-fill text-warning"></i>
                                 <i class="bi bi-star-fill text-warning"></i>
                          </div>
+                    </div>
 
-                         <div class="col-md-4 text-center">
+                         <div class="carousel-item">
+                            <div class="text-center">
                              <img src="images/temoin2.jpg" alt="photo de Alimata sow" width="100px" height="100px">
                              <h4>Alimata sow </h4>
                              <p><em>CEO de TechSolutions</em></p>
@@ -241,9 +243,11 @@
                                 <i class="bi bi-star-fill text-warning"></i>
                                 <i class="bi bi-star-fill text-warning"></i>
                                 <i class="bi bi-star-fill text-warning"></i>
-                         </div>
+                           </div>
+                        </div>
 
-                         <div class="col-md-4 text-center">
+                         <div class="carousel-item">
+                            <div class="text-center">
                              <img src="images/temoin3.jpg" alt="photo de Aïcha ba" width="100px" height="100px">
                              <h4>Aïcha ba </h4>
                                 <p><em>Développeuse web </em></p>
@@ -251,39 +255,23 @@
                                  Grâce à AfriTalent, j'ai trouvé plusieurs clients en quelques jours.
                                  La plateforme est simple et tres efficace.
                              </p>
-                             </i><i class="bi bi-star-fill text-warning"></i>
                                 <i class="bi bi-star-fill text-warning"></i>
                                 <i class="bi bi-star-fill text-warning"></i>
                                 <i class="bi bi-star-fill text-warning"></i>
-                         </div>
-                     </div>
+                                <i class="bi bi-star-fill text-warning"></i>
+                            </div>
+                         </div>  
                  </div>
-               <!--- <img src="images/temoin1.jpg" alt="photo de Oumar lam" width="100px" height="100px">
-                <h4>Oumar lam entrepreneur</h4>
-                <p>
-                    Nous avons recruté un expert en data en moins de 48h.
-                    Une expression rapide et professionnelle.
-                </p>
-            </div>
-
-            <div class="col-md-4 text-center">
-                <img src="images/temoin2.jpg" alt="photo de Alimata sow" width="100px" height="100px">
-                <h4>Alimata sow chef d'entreprise</h4>
-                <p>
-                    Le design de notre application a été amèlioré grâce à un freelance talenteux.
-                    Je recommande fortement AfriTalent.
-                </p>
-            </div>
-
-            <div class="col-md-4 text-center">
-                <img src="images/temoin3.jpg" alt="photo de Aïcha ba" width="100px" height="100px">
-                <h4>Aïcha ba développeuse web</h4>
-                <p>
-                    Grâce à AfriTalent, j'ai trouvé plusieurs clients en quelques jours.
-                    La plateforme est simple et tres efficace.
-                </p>
-            </div>
-        </div>  -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" ></span>
+                    <span class="visually-hidden">Next</span>
+                </button>      
+         </div>
+               
     </section>
 
     <!--        section blog     -->
@@ -332,7 +320,7 @@
 
     <!---   Appel a l' action  -->
 
-        <footer>
+        <section class="section-cta">
             <div class="text-center">
                  <h2>Prêt à rejoindre AfriTalent ?</h2>
                     <p>
