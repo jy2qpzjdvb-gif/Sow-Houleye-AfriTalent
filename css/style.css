@@ -700,3 +700,108 @@ footer.bg-light .text-center{
     font-size: 0.85rem;
     color: #64748b ;
 }
+/* ===============RESPONSIVITE GLOBALE ============== */
+/* pour mobile */
+@media (max-width: 576px){
+    /* navbar */
+    .navbar-toggler{
+        border: 2px solid var(--couleur-accent);
+    }
+    .navbar-toggler-icon{
+        filter: invert(1) !important;
+    }
+    /* section hero */
+    .hero{
+        padding: var(--espace-lg) var(--espace-md);
+        min-height: 60vh;
+    }
+    .hero h1{
+        font-size: 2rem;
+    }
+    .hero h2{
+        font-size: 1rem;
+    }
+    .hero .btn-secondary{
+        display: block;
+        margin: 0.5rem auto;
+        width: 80%;
+    }
+    /* section comment ça marche */
+    section.section-comment-marche .row{
+        grid-template-columns: 1fr !important;
+    }
+    .section-comment-marche .col-md-4:first-child{
+        grid-column: span 1 !important;
+    }
+    /* section categories de services */
+    #services .row{
+        grid-template-columns: 1fr !important;
+    }
+    /* section temoignages */
+    #carouselExample .carousel-item .col-md-4{
+        padding: 0 var(--espace-sm);
+    }
+    /* section blog */
+    #blog .row{
+        grid-template-columns: 1fr !important;
+    }
+    /* section cta */
+    .section-cta h2{
+        font-size: 1.5rem;
+    }
+    .section-cta .btn-primary{
+        font-size: 1rem;
+        padding: 0.7rem 1.5rem !important;
+    }
+    /* section footer */
+    footer.bg-light .col-md-6,
+    footer.bg-light .col-md-3{
+        text-align: center !important;
+        margin-bottom: var(--espace-md);
+    }
+
+}
+/* pour tablette */
+@media (max-width: 992px) and (min-width: 577px){
+    /* hero */
+    .hero{
+        min-height: 70vh;
+    }
+    .hero h1{
+        font-size: 2.5rem;
+    }
+    /* section comment ça marche */
+    section.section-comment-marche .row{
+        grid-template-columns: repeat(2,1fr) !important;
+    }
+    section.section-comment-marche .col-md-4:first-child{
+        grid-column: span 2 !important;
+    }
+    /* section categories de services */
+    #services .row{
+        grid-template-columns: repeat(2,1fr) !important;
+    }
+    /* section blog */
+    #blog .row{
+        grid-template-columns: repeat(2,1fr) !important;
+    }
+    /* section footer */
+    footer.bg-light .col-md-3{
+        margin-bottom: var(--espace-md);
+    }
+}
+/* pour desktop */
+@media (min-width: 1200px){
+    /* section comment ça marche */
+    section.section-comment-marche .row{
+        grid-template-columns: repeat(4,1fr) !important;
+    }
+    /* section services */
+    #services .row{
+        grid-template-columns: repeat(3,1fr) !important;
+    }
+    /* section blog */
+    #blog .row{
+        grid-template-columns: repeat(3,1fr) !important;
+    }
+}
