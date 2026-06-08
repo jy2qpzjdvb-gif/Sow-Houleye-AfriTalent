@@ -234,7 +234,7 @@ nav .btn-primary:hover{
     font-family: var(--police-titre);
     font-size: clamp(2.5rem, 6vw, 4rem);
     font-weight: 800;
-    color: white;
+    color: var(--couleur-primaire);
     line-height: 1.1;
     text-align: center;
     margin-bottom: var(--espace-lg);/* espace entre le titre et le sous-titre */
@@ -242,9 +242,10 @@ nav .btn-primary:hover{
 }
 .hero h2{
     font-family: var(--police-texte);
-    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    font-size: 2rem;
+    margin-top: 4px;
     font-weight: 400;
-    color: #cbd5e1;
+    color: white;
     margin-bottom: var(--espace-xl);
     /* espace avant les boutons cta */
     max-width: 600px;
@@ -878,4 +879,29 @@ body.dark-mode #temoignages .text-center h2,
 body.dark-mode #blog .text-center h2,
 body.dark-mode .section-cta h2{
     color: #f1f5f9 !important;
+}
+/* statistique section hero */
+.hero-stats{
+    display: flex;
+    gap: var(--espace-lg);
+    justify-content: center;
+    margin-top: var(--espace-lg);
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    
+}
+.stat-item{
+    text-align: center;
+    color: var(--couleur-primaire);
+}
+.stat-item .compteur{
+    font-family: var(--police-titre);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--couleur-accent);
+}
+.stat-item p{
+    color: white !important;
+    font-size: 2rem !important;
+    margin-top: 4px !important;
 }
