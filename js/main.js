@@ -150,7 +150,145 @@ if (titreHero) {
 // demarre apres 500ms 
 setTimeout(ecrireLettre, 500);
 }
-            
-    
+/*========== filtrage dynamique des freelances ===========*/
+  const buttons = document.querySelectorAll("[data-filter]");
+  const cards = document.querySelectorAll(".freelance-card");
+
+// fonction pour animer les visible avec delai progressif
+function animerCartes(cartesVisibles){
+    cartesVisibles.forEach((card, index) => {
+        card.style.opacity = "0";
+        card.style.transform = "translateY(30px)";
+        card.style.transition = "opacity 0.4s ease, transform 0.4s ease";
+
+        setTimeout(() => {
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+        }, index * 300); // delai progressif : 0ms , 100ms ,200ms ...
+    })
+}
+
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+        const filter = button.dataset.filter;
+        // retirer la classe active de tout les boutons
+        buttons.forEach(btn => btn.classList.remove("active"));
+        // ajouter la classe active au bouton cliquer
+        button.classList.add("active");
+        
+        const cartesVisibles = [];
+
+        cards.forEach(card => {
+            if(filter === "all" || card.dataset.category === filter){
+                card.classList.remove("hidden");
+                cartesVisibles.push(card); 
+            }else{
+                card.classList.add("hidden");
+                card.style.opacity = "0";
+            }
+        });
+        // lancer l'animation sur les cartes visibles
+        animerCartes(cartesVisibles);
+    });
+  });
+    /*======= validation formulaire de contact =========*/
+    const form = document.getElementById("contactForm");
+
+    if (form) {
+        form.addEventListener("submit", function(e){
+            e.preventDefault();
+            let valide = true;
+            //----nom----
+            const name = document.getElementById("name");
+            const nameError = document.getElementById("nameError");
+            if (name.value.trim() === "") {
+                nameError.textContent = "Le nom est obligatoire.";
+                name.classList.add("is-invalid");
+                name.classList.remove("is-valid");
+                valide = false;
+            }else{
+                nameError.textContent = "";
+                name.classList.add("is-valid");
+                name.classList.remove("is-invalid")
+            }
+            //----prenom-----
+            const surname = document.getElementById("surname");
+            const surnameError = document.getElementById("surnameError");
+            if (surname.value.trim() === "") {
+                surnameError.textContent = "Le prenom est obligatoire.";
+                surname.classList.add("is-invalid");
+                surname.classList.remove("is-valid");
+                valide = false;
+            }else{
+                surnameError.textContent = "";
+                surname.classList.add("is-valid");
+                surname.classList.remove("is-invalid")
+            }
+            //-----email---
+            const email = document.getElementById("email");
+            const emailError = document.getElementById("emailError");
+            const regexEmail =  /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email.value.trim() === "") {
+                emailError.textContent = "L'Email est obligatoire.";
+                email.classList.add("is-invalid");
+                email.classList.remove("is-valid");
+                valide = false;
+            }else{
+                emailError.textContent = "";
+                email.classList.add("is-valid");
+                email.classList.remove("is-invalid")
+            }
+            //-----sujet-----
+            const subject = document.getElementById("subject");
+            // on cree l'erreur dynamique si elle n'existe pas
+            let subjectError = document.getElementById("subjectError");
+            if (!subjectError) {
+                subjectError = document.createElement("small");
+                subjectError.id = "subjectError";
+                subjectError.classList.add("text-danger");
+                subject.after(subjectError);
+            }
+            if (subject.value === "") {
+                subjectError.textContent = "Veuillez selectionner un sujet.";
+                subject.classList.add("is-invalid");
+                subject.classList.remove("is-valid");
+                valide = false;
+            }else{
+                subjectError.textContent = "";
+                subject.classList.add("is-valid");
+                subject.classList.remove("is-invalid")
+            }
+            //------message-----
+            const message = document.getElementById("message");
+            // même chose pour messageError
+            let messageError = document.getElementById("messageError");
+            if (!messageError) {
+                messageError = document.createElement("small");
+                messageError.id = "messageError";
+                messageError.classList.add("text-danger");
+                messageError.after(messageError);
+            }
+            if (message.value.trim().length < 20 ) {
+                messageError.textContent = "Le message doit contenir au moins 20 caractères.";
+                message.classList.add("is-invalid");
+                message.classList.remove("is-valid");
+                valide = false;
+            }else{
+                messageError.textContent = "";
+                message.classList.add("is-valid");
+                message.classList.remove("is-invalid")
+            }
+            //----succes----
+            if(valide) {
+                 const successMessage = document.getElementById("successMessage");
+                 successMessage.style.display = "block";
+                 form.reset();
+                 // retirer les classes vertes apres reset
+                 form.querySelectorAll(".is-valid").forEach(el => el.classList.remove("is-valid"));
+                 // cacher le message apres 4 sec
+                 setTimeout(() => successMessage.style.display = "none", 4000);
+            }
+        })
+    }
 });
 
