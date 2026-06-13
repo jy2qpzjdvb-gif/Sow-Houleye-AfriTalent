@@ -144,11 +144,11 @@ if (titreHero) {
         if (index < texteOriginal.length){ 
             titreHero.textContent += texteOriginal.charAt(index);
             index++;
-            setTimeout(ecrireLettre, 80)// 80ms entre chaque lettre 
+            setTimeout(ecrireLettre, 40)// 80ms entre chaque lettre 
     }
 }
 // demarre apres 500ms 
-setTimeout(ecrireLettre, 500);
+setTimeout(ecrireLettre, 400);
 }
 /*========== filtrage dynamique des freelances ===========*/
   const buttons = document.querySelectorAll("[data-filter]");
